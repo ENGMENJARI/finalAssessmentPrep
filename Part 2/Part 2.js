@@ -1,3 +1,21 @@
+
+
+
+
+
+function each(coll, f) {
+if (Array.isArray(coll)) {
+    for (var i = 0; i < coll.length; i++) {
+         f(coll[i], i);
+    }
+} else {
+    for (var key in coll) {
+         f(coll[key], key);
+    }
+ }
+}
+
+
 //=============================================================================
 /*                                  Part 2                                   */
 //=============================================================================
@@ -32,3 +50,56 @@
  */
 
 //writ your code here .....
+function player(name){
+	var play={}
+play.name=name,
+	play.addInfo=addInfo,
+	play.increaseLevel=increaseLevel,
+	play.isAvailable=isAvailable
+return play
+
+}
+
+var addInfo=function(age, position, level, availability ){
+	return {
+		name:this.name,
+		age:age,
+		position:position,
+		level:level,
+		availability:availability
+	}
+}
+var increaseLevel=function(n){
+	
+	return this.name +' has a level equal to '+n
+}
+var isAvailable=function(str){
+	if(str===this.name){
+		return true
+	}
+	return false
+}
+var arrayOfPlayers=[p1,p2]
+var p1=player('hsan')
+p1.addInfo(25,'goaler',2,'true')
+ var p2=player('mohammad')
+ p2.addInfo(32,'defenser',3,'false')
+
+function declevel(arrayOfPlayers){
+	each(arrayOfPlayers,function(player){
+if(player.age>30){
+	player.level-1
+}
+	})
+	return player
+}
+function sortPlayerBy(arrayOfPlayers,key){
+	each(arrayOfPlayers,function(player){
+		return player.key
+	})
+}
+
+
+
+	//this.name+' ,old is'+age +' and he is '+position+' and  his level is'+level+','+availability;//
+

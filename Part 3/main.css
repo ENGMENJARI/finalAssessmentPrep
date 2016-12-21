@@ -1,0 +1,10 @@
+body{
+	background-color: red;
+}
+h1{
+	font-family: arial;
+}
+#inputToDo.textinput{
+	height: 30%;
+	width: 40%
+}
